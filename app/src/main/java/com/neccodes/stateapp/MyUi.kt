@@ -32,12 +32,15 @@ fun MyUi() {
 
         var clickedNumber by remember { mutableIntStateOf(0) }
 
-        Text(
-            text = "You clicked $clickedNumber times!",
-            style = TextStyle(
-                fontSize = 25.sp
+        if (clickedNumber > 0) {
+            Text(
+                text = "You clicked $clickedNumber times!",
+                style = TextStyle(
+                    fontSize = 25.sp
+                )
             )
-        )
+        }
+
         Spacer(modifier = Modifier.height(30.dp))
         Button(
             onClick = {
